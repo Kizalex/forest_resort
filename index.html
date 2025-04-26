@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forest Escape Resort - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="profile.html">Customer Profile</a>
+        </nav>
+        <marquee class="developer-name"><span>WELCOME TO FOREST ESCAPE RESORT OFFICIAL PAGE</span></marquee>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="background-slider">
+                <img src="images/images (1).jpeg" class="slide active" alt="Slider Image 1">
+                <img src="images/images (2).jpeg" class="slide" alt="Slider Image 2">
+                <img src="images/spa wellness.jpg" class="slide" alt="Slider Image 3">
+            </div>
+        </section>
+    </main>
+
+    <div>
+        
+            <h1>Welcome to Forest Escape Resort</h1>
+            <p>Experience tranquility and luxury in the heart of nature.</p>
+    </div>
+
+    <!-- Product Category Section -->
+    <section class="product-category">
+      <div class="tabs">
+        <button class="tab active" data-tab="offer">Offer</button>
+      </div>
+      <div class="tab-content offer-content active">
+        <div class="offer-carousel">
+          <div class="offer-card"><img src="images/images (1).jpeg" alt="Offer 1"><div class="offer-title">Offer 1</div></div>
+          <div class="offer-card"><img src="images/images (2).jpeg" alt="Offer 2"><div class="offer-title">Offer 2</div></div>
+          <div class="offer-card"><img src="images/spa wellness.jpg" alt="Offer 3"><div class="offer-title">Offer 3</div></div>
+          <div class="offer-card"><img src="images/infinity pool.jpg" alt="Offer 4"><div class="offer-title">Offer 4</div></div>
+          <div class="offer-card"><img src="images/images (1).jpeg" alt="Offer 5"><div class="offer-title">Offer 5</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspiration Section -->
+    <section class="inspiration-section">
+      <div class="inspiration-message">Get inspired for your next escape!</div>
+    </section>
+
+    <footer>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="profile.html">Customer Profile</a>
+        </nav>
+        <div class="copyright">&copy; 2024 Forest Escape Resort. All rights reserved.</div>
+    </footer>
+    <script>
+      // Background slider script
+      const slides = document.querySelectorAll('.background-slider .slide');
+      let currentSlide = 0;
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 3000);
+    </script>
+    <script>
+      // Tabs switching
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          tabContents.forEach(content => content.classList.remove('active'));
+          if(tab.dataset.tab === 'offer') {
+            document.querySelector('.offer-content').classList.add('active');
+          }
+        });
+      });
+
+      // Offer carousel auto-loop
+      const offerCarousel = document.querySelector('.offer-carousel');
+      const offerCards = document.querySelectorAll('.offer-card');
+      let offerIndex = 0;
+      const visibleOffers = 3;
+      function showOffers() {
+        offerCards.forEach((card, i) => {
+          card.style.transform = `translateX(-${offerIndex * (100 + 18)}px)`; // 100px card + 18px gap
+        });
+      }
+      setInterval(() => {
+        offerIndex = (offerIndex + 1) % (offerCards.length - visibleOffers + 1);
+        showOffers();
+      }, 2500);
+      showOffers();
+    </script>
+</body>
+</html> 

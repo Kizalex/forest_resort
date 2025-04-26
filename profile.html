@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Profile - Forest Escape Resort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="profile.html">Customer Profile</a>
+        </nav>
+        
+    </header>
+    <main>
+        <section class="profile-section">
+            <h1>Customer Profile Entry</h1>
+            <form class="profile-form" action="save_profile.php" method="POST">
+                <label for="cust_name">Name:</label>
+                <input type="text" id="cust_name" name="cust_name" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" max="120" required>
+
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+                <label for="room_type">Room Type:</label>
+                <select id="room_type" name="room_type" required>
+                    <option value="A/C">A/C</option>
+                    <option value="Non-A/C">Non-A/C</option>
+                    <option value="Deluxe">Deluxe</option>
+                </select>
+
+                <label for="payment_type">Type of Payment:</label>
+                <select id="payment_type" name="payment_type" required>
+                    <option value="Cash">Cash</option>
+                    <option value="Credit/Debit Card">Credit/Debit Card</option>
+                    <option value="Coupons">Coupons</option>
+                </select>
+
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="profile.html">Customer Profile</a>
+        </nav>
+        <div class="copyright">&copy; 2024 Forest Escape Resort. All rights reserved.</div>
+    </footer>
+</body>
+</html> 
